@@ -1,6 +1,6 @@
 
 
-.carousel-container {
+.carousel-container, .slider {
   width: 900px;
   height: 450px;
 }
@@ -18,7 +18,7 @@
 }
 
 .my-bottom {
-  bottom: 0;
+  bottom: 5px;
 }
 
 .img-container:not(.my-active) {

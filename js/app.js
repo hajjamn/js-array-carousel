@@ -10,6 +10,7 @@ console.log(images)
 //definisco il contenitore del carosello
 const containerElement = document.querySelector('.carousel-container')
 console.log(containerElement)
+
 //aggiungo i div con le immagini dentro
 
 for (let i = 0; i < images.length; i++) {
@@ -30,4 +31,38 @@ imageElement.classList.add('my-active')
 //Metto costante ai pulsanti
 
 const nextElement = document.querySelector('.next')
-const prevvElement = document.querySelector('.prev')
+const prevElement = document.querySelector('.prev')
+
+//Creo array dei div con le immagini
+
+const imagesList = document.querySelectorAll('.img-container')
+let imagesIndex = 0;
+//Tasto next
+
+nextElement.addEventListener('click', function() {
+     //Rimuovo active dal div attuale
+     let activeElement = imagesList[imagesIndex]
+     activeElement.classList.remove('my-active')
+
+     //alzo l indice di 1
+     imagesIndex++
+
+     //aggiungo active al div a seconda dell indice
+     activeElement = imagesList[imagesIndex]
+     activeElement.classList.add('my-active')
+}
+);
+//Tasto prev
+prevElement.addEventListener('click', function() {
+    //Rimuovo active dal div attuale
+    let activeElement = imagesList[imagesIndex]
+    activeElement.classList.remove('my-active')
+
+    //abbasso l indice di 1
+    imagesIndex--
+
+    //aggiungo active al div a seconda dell indice
+    activeElement = imagesList[imagesIndex]
+    activeElement.classList.add('my-active')
+}
+);
