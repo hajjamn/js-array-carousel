@@ -1,6 +1,4 @@
-body {
-  background-color: darkblue;
-}
+
 
 .carousel-container {
   width: 900px;
@@ -21,4 +19,8 @@ body {
 
 .my-bottom {
   bottom: 0;
+}
+
+.img-container:not(.my-active) {
+  display: none;
 }

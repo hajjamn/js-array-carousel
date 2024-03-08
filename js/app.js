@@ -6,3 +6,23 @@ const images = [
     './img/05.webp'
 ]
 console.log(images)
+
+//definisco il contenitore del carosello
+const containerElement = document.querySelector('.carousel-container')
+console.log(containerElement)
+//aggiungo i div con le immagini dentro
+
+for (let i = 0; i < images.length; i++) {
+    //ad ogni ciclo aggiungo un div con l-immagine relativa all indice
+    containerElement.innerHTML += `
+    <div class="img-container">
+        <img src="./img/0${i + 1}.webp" alt="">
+    </div>`
+}
+
+//Creo variabile per prima immagine
+const imageElement = document.querySelector('.img-container')
+console.log(imageElement)
+
+//Aggiungo classe .active
+imageElement.classList.add('my-active')
