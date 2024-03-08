@@ -26,3 +26,8 @@ console.log(imageElement)
 
 //Aggiungo classe .active
 imageElement.classList.add('my-active')
+
+//Metto costante ai pulsanti
+
+const nextElement = document.querySelector('.next')
+const prevvElement = document.querySelector('.prev')
