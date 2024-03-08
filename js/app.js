@@ -5,7 +5,7 @@ const images = [
     './img/04.webp',
     './img/05.webp'
 ]
-console.log(images)
+
 
 //definisco il contenitore del carosello
 const containerElement = document.querySelector('.carousel-container')
@@ -23,7 +23,6 @@ for (let i = 0; i < images.length; i++) {
 
 //Creo variabile per prima immagine
 const imageElement = document.querySelector('.img-container')
-console.log(imageElement)
 
 //Aggiungo classe .active
 imageElement.classList.add('my-active')
@@ -45,24 +44,39 @@ nextElement.addEventListener('click', function() {
      activeElement.classList.remove('my-active')
 
      //alzo l indice di 1
-     imagesIndex++
+     
+     if (imagesIndex < 4) {
+        imagesIndex++
+     } else {
+        imagesIndex = 0;
+     }
+     
+    
 
      //aggiungo active al div a seconda dell indice
      activeElement = imagesList[imagesIndex]
      activeElement.classList.add('my-active')
-}
+     console.log(imagesIndex)
+
+
+    }
 );
 //Tasto prev
 prevElement.addEventListener('click', function() {
+    
     //Rimuovo active dal div attuale
     let activeElement = imagesList[imagesIndex]
     activeElement.classList.remove('my-active')
 
-    //abbasso l indice di 1
-    imagesIndex--
+    if (imagesIndex > 1) {
+        imagesIndex--
+     } else {
+        imagesIndex = 4;
+     }
 
     //aggiungo active al div a seconda dell indice
     activeElement = imagesList[imagesIndex]
     activeElement.classList.add('my-active')
+
 }
 );
